@@ -39,7 +39,7 @@ The data files extracted from the downloaded file (UCI HAR Dataset.zip) were sav
  GCD_Assignment/train/X_train.txt                           
  GCD_Assignment/train/y_train.txt
 
-#File definitions
+#File Definitions
 *	The following data has been provided for each record.
 *	Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
 *	Triaxial Angular velocity from the gyroscope. 
