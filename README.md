@@ -10,7 +10,7 @@ A detailed description of the data can be found at
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 The data files extracted from the downloaded file (UCI HAR Dataset.zip) were saved into the following folder structure. This folder structure was decided on after reading the accompanied README.txt file.
 
- GCD_Assignment/activity_labels.txt                         
+ GCD_Assignment/activity_labels.txt   
  GCD_Assignment/features_info.txt                           
  GCD_Assignment/features.txt                                
  GCD_Assignment/README.txt                                  
@@ -40,12 +40,12 @@ The data files extracted from the downloaded file (UCI HAR Dataset.zip) were sav
  GCD_Assignment/train/y_train.txt
 
 #File definitions
-	The following data has been provided for each record.
-	Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
-	Triaxial Angular velocity from the gyroscope. 
-	A 561-feature vector with time and frequency domain variables. 
-	Its activity label. 
-	An identifier of the subject who carried out the experiment.
+*	The following data has been provided for each record.
+*	Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
+*	Triaxial Angular velocity from the gyroscope. 
+*	A 561-feature vector with time and frequency domain variables. 
+*	Its activity label. 
+*	An identifier of the subject who carried out the experiment.
 
 Filename 	                                      Description
 README.txt	 
@@ -63,21 +63,21 @@ train/Inertial Signals/body_acc_x_train.txt	    The body acceleration signal obt
 train/Inertial Signals/body_gyro_x_train.txt	  The angular velocity vector measured by the gyroscope for each window sample. The                                                     units are radians/second.
 
 #Transforming the data
-	Create tables from raw data files.
+*	Create tables from raw data files.
       o	Reads in each file one at a time using read.table to create a data.table that represents each file.
-	Merges the training and the test sets to create one data set.
+*	Merges the training and the test sets to create one data set.
       o	Uses rbind to combine the test and trainining files for each of activity, subject and features. 
       o	Add the variable names to the merged tables to prepare them for merging into one full data.table
       o	Merge all data frames into AllData
-	Extracts only the measurements on the mean and standard deviation for each measurement.
+*	Extracts only the measurements on the mean and standard deviation for each measurement.
       o	Takes a subset of measurements defined by RequiredFeatureNames
-	Uses descriptive activity names to name the activities in the data set.
+*	Uses descriptive activity names to name the activities in the data set.
       o	Loops through each value in ActivityLabels$V1 and replaces the corresponding value in AllData$Activities with the value in            ActivityLabels$V2
-	Appropriately labels the data set with descriptive variable names.
+*	Appropriately labels the data set with descriptive variable names.
       o	Substitutes a more descriptive labels for each of the abbreviated labels in AllData 
-	From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and      each subject.
+*	From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and      each subject.
       o	Using aggregate it averages the data over each grouping
-	Write tidy data to file.
+*	Write tidy data to file.
 
 #TidyData
 
