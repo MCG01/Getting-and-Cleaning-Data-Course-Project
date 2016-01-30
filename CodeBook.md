@@ -2,7 +2,7 @@
 #Code Book
 This document describes the variables used in the run_analysis.R submitted for the “Getting and Cleaning Data Course Project”. I have included the file definitions here as well just to add clarity to the reading of the variables.
 
-#File definitions
+#File Definitions
 *	The following data has been provided for each record.
 *	Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
 *	Triaxial Angular velocity from the gyroscope. 
