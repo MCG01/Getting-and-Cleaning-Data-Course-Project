@@ -1,12 +1,14 @@
 ##Getting and Cleaning Data Course Project
+#Project root in relation to WD
+rootPath <- "GCD_Assignment"
 # Create Tables
-ActivityTest  <- read.table(file.path( "y_test.txt" ),header = FALSE)
-ActivityTrain <- read.table(file.path( "y_train.txt"),header = FALSE)
-SubjectTest  <- read.table(file.path( "Subject_test.txt" ),header = FALSE)
-SubjectTrain <- read.table(file.path( "Subject_train.txt"),header = FALSE)
-FeatureTest  <- read.table(file.path( "X_test.txt" ),header = FALSE)
-FeatureTrain <- read.table(file.path( "X_train.txt"),header = FALSE)
-FeatureNames <- read.table(file.path( "features.txt"),header = FALSE)
+ActivityTest  <- read.table(file.path(rootPath ,"test", "y_test.txt" ),header = FALSE)
+ActivityTrain <- read.table(file.path(rootPath, "train","y_train.txt"),header = FALSE)
+SubjectTest  <- read.table(file.path(rootPath, "test" , "Subject_test.txt" ),header = FALSE)
+SubjectTrain <- read.table(file.path(rootPath, "train", "Subject_train.txt"),header = FALSE)
+FeatureTest  <- read.table(file.path(rootPath, "test" , "X_test.txt" ),header = FALSE)
+FeatureTrain <- read.table(file.path(rootPath, "train", "X_train.txt"),header = FALSE)
+FeatureNames <- read.table(file.path(rootPath, "features.txt"),header = FALSE)
 ## 1. Merges the training and the test sets to create one data set.
 AllActivities <- rbind(ActivityTrain, ActivityTest)
 AllSubjects <- rbind(SubjectTrain, SubjectTest)
@@ -23,7 +25,7 @@ RequiredFeaturesNames<-FeatureNames$V2[grep("mean\\(\\)|std\\(\\)", FeatureNames
 selectedNames<-c(as.character(RequiredFeaturesNames), "subject", "activity" )
 AllData<-subset(AllData,select=selectedNames)
 ## 3. Uses descriptive activity names to name the activities in the data set
-ActivityLabels <- read.table(file.path( "activity_labels.txt"),header = FALSE)
+ActivityLabels <- read.table(file.path(rootPath, "activity_labels.txt"),header = FALSE)
 for (i in 1:length(ActivityLabels$V2)){
   AllData$activity <- replace(as.character(AllData$activity), AllData$activity == i,paste(ActivityLabels$V2[i] ))
 }
